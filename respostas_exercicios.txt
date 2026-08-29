@@ -1,0 +1,215 @@
+========================================================
+LISTA DE EXERCÍCIOS — POWER BI E ORANGE DATA MINING
+RESPOSTAS COMPLETAS
+========================================================
+
+--------------------------------------------------------
+EXERCÍCIO 1 — VENDAS
+Ferramentas: Excel e Power BI
+--------------------------------------------------------
+
+a) Qual produto vendeu mais?
+R: O Notebook foi o produto com maior valor total de vendas. Apesar de não ser
+o produto com maior número de unidades vendidas, seu alto valor unitário
+(R$ 2.500,00) fez com que acumulasse o maior faturamento total entre todos
+os produtos da base.
+
+b) Qual estado apresentou mais vendas?
+R: SP (São Paulo) foi o estado com maior volume de vendas. Isso reflete a
+distribuição da base, onde SP concentra 25% dos clientes — a maior proporção
+entre todos os estados representados.
+
+c) Qual foi o valor total vendido?
+R: O valor total vendido foi de R$ 31.253,80, obtido pela soma da coluna
+Valor_Total de todos os 30 registros da base de vendas.
+
+
+--------------------------------------------------------
+EXERCÍCIO 2 — GESTÃO ACADÊMICA
+Ferramentas: Excel e Power BI
+--------------------------------------------------------
+
+a) Qual curso possui mais alunos?
+R: O curso de Administração possui mais alunos. Isso foi identificado no
+gráfico de barras "Contagem de ID_Aluno por Nome_Curso", onde a barra
+correspondente à Administração apresentou o maior valor.
+
+b) Qual disciplina possui mais matrículas?
+R: Estatística Descritiva foi a disciplina com maior número de matrículas,
+sendo a mais procurada pelos alunos do curso de Análise de Dados.
+
+c) Por que utilizar várias tabelas relacionadas pode ser melhor do que
+colocar todas as informações em uma única tabela?
+R: O uso de tabelas relacionadas aplica o princípio de normalização de banco
+de dados, que traz três vantagens principais:
+
+   - Evita redundância: o nome do curso não precisa ser repetido em cada
+     linha de cada aluno. Ele existe uma única vez na tabela Cursos.
+
+   - Garante consistência: se o nome de um curso mudar, basta alterar em
+     um único lugar. Em uma tabela única, seria necessário atualizar
+     dezenas de linhas, com risco de erro.
+
+   - Facilita manutenção e escalabilidade: adicionar novos alunos, cursos
+     ou disciplinas é feito de forma independente, sem impactar os demais
+     dados.
+
+
+--------------------------------------------------------
+EXERCÍCIO 3 — CONHECENDO OS DADOS
+Ferramentas: Excel, CSV e Orange
+--------------------------------------------------------
+
+a) Qual faixa etária possui mais clientes?
+R: A distribuição de idade se mostrou bimodal, com dois picos de
+concentração: o primeiro em torno dos 22-23 anos (frequência 8, maior
+barra do histograma) e o segundo entre 60-67 anos (frequência 6-7).
+Não há uma única faixa dominante — a base possui dois grupos etários
+mais expressivos.
+
+b) Qual estado possui mais clientes?
+R: SP (São Paulo) é o estado com mais clientes, com 26 registros dos 100
+totais. Isso equivale a 26% da base, refletindo o maior peso dado ao estado
+de São Paulo na geração dos dados.
+
+c) Qual é a distribuição da renda?
+R: A distribuição da renda é assimétrica positiva. A maioria dos clientes
+concentra renda entre R$ 1.320 e R$ 5.000, com alguns valores mais elevados
+puxando a média para cima (em torno de R$ 4.360). O valor mínimo foi fixado
+em R$ 1.320, correspondente ao salário mínimo, e a mediana ficou próxima
+de R$ 3.800.
+
+d) Existe alguma relação entre quantidade de compras e valor total
+das compras?
+R: Sim. O Scatter Plot no Orange revelou uma tendência positiva clara entre
+as duas variáveis: clientes com maior quantidade de compras tendem a
+acumular maior valor total. A correlação calculada foi de aproximadamente
+0,70, indicando correlação positiva moderada. Há variação no ticket médio
+por compra, o que explica a dispersão dos pontos ao redor da linha de
+tendência.
+
+
+--------------------------------------------------------
+EXERCÍCIO 4 — DADOS VAZIOS E VALIDADE
+Ferramentas: Excel, CSV e Orange
+--------------------------------------------------------
+
+a) Quantos dados vazios foram encontrados?
+R: Foram encontrados 20 dados vazios no total, distribuídos em 4 campos:
+   - Idade: 5 valores vazios
+   - Renda_Mensal: 5 valores vazios
+   - Estado: 5 valores vazios
+   - Qtd_Compras: 5 valores vazios
+   O campo Valor_Total_Compras não apresentou nenhum vazio.
+
+b) Quais valores eram inválidos?
+R: Foram encontrados 5 valores inválidos:
+   - Idade = 250: valor biologicamente impossível (máximo visível no
+     Column Statistics)
+   - Idade = -5: idade negativa é impossível (mínimo da coluna)
+   - Renda_Mensal = -3000: renda não pode ser negativa (mínimo da coluna)
+   - Qtd_Compras = -10: quantidade não pode ser negativa (mínimo da coluna)
+   - Estado = "XX": sigla inexistente no Brasil (identificada na Data Table)
+
+c) Qual é a diferença entre um dado vazio e um dado inválido?
+R: Um dado vazio é a ausência de informação — o campo existe mas não foi
+preenchido. Um dado inválido está preenchido, mas com um valor que viola as
+regras definidas para aquele campo (como uma idade de 250 anos ou uma renda
+negativa). Ambos comprometem a qualidade dos dados, mas de formas distintas:
+o vazio indica falta de coleta ou registro, enquanto o inválido indica erro
+de digitação, falha de validação ou inserção incorreta.
+
+
+--------------------------------------------------------
+EXERCÍCIO 5 — ACURÁCIA, DUPLICIDADE E CONSISTÊNCIA
+Ferramentas: Excel, CSV e Orange
+--------------------------------------------------------
+
+a) Um valor pode ser válido e ainda assim estar errado? Dê um exemplo.
+R: Sim. Validade verifica se o valor respeita o formato e as regras do
+campo; acurácia verifica se o valor corresponde à realidade. Um valor pode
+passar na validação e ainda assim estar incorreto. Exemplo: o cliente C0060
+tem Estado = "RJ" registrado na base — é uma sigla válida, existe no Brasil,
+não é nula nem fora do formato. Porém a fonte de referência confirma que o
+estado correto é "SP". O dado é válido, mas não é acurado.
+
+b) O que é uma duplicidade?
+R: É a ocorrência de um mesmo registro mais de uma vez na base de dados de
+forma indevida. No exercício, os clientes C0005, C0015, C0025, C0035 e C0045
+aparecem duas vezes cada um, totalizando 5 duplicatas. Isso distorce análises
+— contagens, médias e totais ficam inflados — e pode gerar decisões erradas
+baseadas em dados repetidos. A duplicidade foi detectada com o widget Unique
+do Orange, que reduziu a base de 105 para 100 registros.
+
+c) O que significa dizer que dois dados são inconsistentes?
+R: Significa que duas informações do mesmo registro são contraditórias entre
+si, mesmo que cada uma individualmente pareça válida. No exercício, o cliente
+C0007 tem Idade = 40 e Data_Nascimento = 1972 — se nasceu em 1972, em 2024
+teria 52 anos, não 40. Nenhum dos dois valores é inválido isoladamente, mas
+juntos se contradizem.
+
+d) Explique a diferença entre validade e acurácia.
+R: Validade é uma verificação formal: o valor respeita as regras definidas
+para aquele campo? Exemplos de regras: estado deve ser uma sigla de 2
+letras, idade deve ser um número positivo, e-mail deve conter "@". Acurácia
+é uma verificação de conteúdo: o valor corresponde à realidade ou a uma
+fonte confiável? Um campo pode ser 100% válido e completamente impreciso —
+como um CEP no formato correto que pertence a outro bairro. A validação pode
+ser feita automaticamente por sistemas; a acurácia exige comparação com uma
+referência externa confiável.
+
+
+--------------------------------------------------------
+EXERCÍCIO 6 — ORANGE + MySQL
+Ferramentas: MySQL e Orange Data Mining
+--------------------------------------------------------
+
+a) Quais problemas foram encontrados?
+R: Foram encontrados os quatro tipos de problemas estudados:
+   1. Dados vazios: campos com valor NULL em múltiplas tabelas.
+   2. Valores inválidos: idades impossíveis, renda e preço negativos,
+      e sigla de estado inexistente.
+   3. Duplicidades: registros de vendas inseridos mais de uma vez.
+   4. Inconsistências: idade declarada incompatível com a data de
+      nascimento do cliente.
+
+b) Em quais campos eles apareceram?
+R:
+   DADOS VAZIOS:
+   - Tabela clientes: campos idade, estado e renda_mensal (5 NULLs cada)
+   - Tabela vendas: campo quantidade (5 NULLs)
+
+   VALORES INVÁLIDOS:
+   - Tabela clientes: idade = 180 e idade = -3 (biologicamente impossíveis),
+     estado = 'XX' (sigla inexistente), renda_mensal = -5000 (valor negativo)
+   - Tabela vendas: quantidade = -2 (valor negativo)
+   - Tabela produtos: preco_unitario = -99 (valor negativo)
+
+   DUPLICIDADES:
+   - Tabela vendas: 5 registros inteiros duplicados (id_venda 5, 15, 30,
+     50 e 75 inseridos novamente)
+
+   INCONSISTÊNCIAS:
+   - Tabela clientes: campo idade incompatível com data_nasc nos clientes
+     de id 1, 2, 10, 15 e 20 (os ids 1 e 2 acumulam validade + consistência)
+
+c) Quantos registros foram afetados?
+R:
+   - Dados vazios: 20 ocorrências (5 por campo × 4 campos)
+   - Valores inválidos: 6 registros em 3 tabelas
+   - Duplicidades: 5 vendas duplicadas (base passou de 100 para 105 linhas)
+   - Inconsistências: 5 clientes com idade × data_nasc incompatíveis
+   Total: 36 ocorrências de problemas distribuídas nas 3 tabelas.
+
+d) O fato de os dados estarem armazenados em um banco de dados garante
+que eles estejam corretos? Explique.
+R: Não. Um banco de dados garante apenas estrutura e persistência — os dados
+são armazenados de forma organizada e não se perdem. Mas a qualidade do
+conteúdo depende das regras de validação definidas nas tabelas (constraints),
+da qualidade do sistema que insere os dados e dos processos de governança
+da organização. Neste exercício, foi possível inserir idade = 180 e
+renda = -5000 diretamente no banco porque as tabelas não possuíam
+constraints de domínio (como CHECK (idade BETWEEN 0 AND 120)). Armazenamento
+e qualidade de dados são responsabilidades distintas e complementares.
+
+

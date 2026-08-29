@@ -1,0 +1,11 @@
+id_produto,nome_produto,categoria,preco_unitario,estoque
+1,Notebook,Eletrônicos,-99.00,50
+2,Smartphone,Eletrônicos,1800.00,80
+3,"Fone Bluetooth",Eletrônicos,350.00,120
+4,"Tênis Esportivo",Vestuário,299.90,200
+5,Camiseta,Vestuário,79.90,300
+6,"Calça Jeans",Vestuário,149.90,150
+7,"Livro Python",Livros,89.90,100
+8,"Livro SQL",Livros,79.90,100
+9,Mochila,Acessórios,189.90,75
+10,"Caneta Kit",Papelaria,29.90,500

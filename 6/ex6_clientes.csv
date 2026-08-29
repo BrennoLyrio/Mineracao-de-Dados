@@ -1,0 +1,31 @@
+id_cliente,nome,idade,data_nasc,cidade,estado,renda_mensal
+1,"Ana Souza",180,1992-03-24,"São Paulo",SP,3801.34
+2,"Bruno Lima",-3,1999-06-24,"São Paulo",SP,4578.02
+3,"Carla Ferreira",NULL,1974-09-13,Goiânia,GO,2833.81
+4,"Diego Martins",47,1977-09-25,Curitiba,NULL,4990.95
+5,"Eduarda Costa",60,1964-05-02,"Porto Alegre",RS,NULL
+6,"Felipe Rocha",49,1975-04-02,"São Paulo",XX,3519.01
+7,"Gabriela Mendes",NULL,1999-09-21,"Rio de Janeiro",RJ,3981.33
+8,"Henrique Alves",46,1978-03-10,Salvador,BA,-5000.00
+9,"Isabela Nunes",20,2004-02-27,"Rio de Janeiro",NULL,5183.19
+10,"João Pedro",32,1970-06-15,"Rio de Janeiro",RJ,3477.24
+11,"Karina Dias",30,1994-04-10,"São Paulo",SP,NULL
+12,"Leonardo Gomes",NULL,1996-12-23,"Rio de Janeiro",RJ,3461.98
+13,"Marina Ribeiro",50,1974-10-20,"Rio de Janeiro",RJ,3915.79
+14,"Nicolas Barros",25,1999-05-02,"Porto Alegre",NULL,2487.69
+15,"Olivia Santos",36,2000-03-22,Salvador,BA,3921.90
+16,"Paulo Vieira",48,1976-08-16,"Rio de Janeiro",RJ,NULL
+17,"Quezia Moura",36,1988-09-12,"São Paulo",SP,4757.48
+18,"Rafael Castro",NULL,1974-10-06,"Belo Horizonte",MG,4755.50
+19,"Sabrina Torres",23,2001-04-26,"Porto Alegre",RS,1320.00
+20,"Thiago Pinto",40,1965-11-08,Florianópolis,NULL,1320.00
+21,"Úrsula Campos",60,1964-01-02,"Belo Horizonte",MG,2634.94
+22,"Victor Hugo",50,1974-09-10,"Belo Horizonte",MG,NULL
+23,"Wanda Freitas",45,1979-05-21,Recife,PE,1804.26
+24,"Xiomara Lima",31,1993-09-07,Florianópolis,SC,4136.72
+25,"Yasmin Cardoso",NULL,1982-08-19,Curitiba,PR,3870.35
+26,"Zeca Pereira",55,1969-02-20,Fortaleza,CE,3828.19
+27,"Amanda Cruz",31,1993-08-07,"Belo Horizonte",NULL,3032.76
+28,"Bernardo Silva",32,1992-05-28,"São Paulo",SP,NULL
+29,"Cíntia Borges",52,1972-01-23,Florianópolis,SC,2806.76
+30,"Daniel Macedo",59,1965-04-26,"Belo Horizonte",MG,2803.09
